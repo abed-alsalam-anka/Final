@@ -1,0 +1,136 @@
+---
+title: "Amerika Birleşik Devletleri'ndeki toplu katliamların bir analizi: Modeller, eğilimler ve çıkarımlar."
+author: 
+  - Abed alsalam Anka[^1]
+bibliography: ../bibliography/biblio.bib
+csl: ../csl/apa-tr.csl
+header-includes:
+  - \usepackage{polyglossia}
+  - \setmainlanguage{turkish}
+  - \usepackage{booktabs}
+  - \usepackage{caption} 
+  - \captionsetup[table]{skip=10pt}
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    fig_height: 3
+    fig_width: 4
+    keep_tex: no
+    latex_engine: xelatex
+    number_sections: yes
+    toc: no
+geometry: margin=1in
+link-citations: yes
+urlcolor: blue
+fontsize: 12pt
+biblio-style: apalike
+abstract: |
+  Bu bölümde çalışmanızın özetini yazınız.
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+<!-- ======================================================================= -->
+<!-- ============================== NOTLAR ================================= -->
+<!-- ======================================================================= -->
+[^1]: Öğrenci Numarası, [Github Repo](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ)
+
+# Final Hakkında Önemli Bilgiler
+
+\colorbox{BurntOrange}{GITHUB REPO BAĞLANTINIZI BU DOSYANIN 37. SATIRINA YAZINIZ!}
+
+**Proje gönderimi, Github repo linki ile birlikte ekampus sistemine bir zip dosyası yüklenerek yapılacaktır. Sisteme zip dosyası yüklemezseniz ve Github repo linki vermezseniz ara sınav ve final sınavlarına girmemiş sayılırsınız.**
+
+**Proje klasörünüzü sıkıştırdıktan sonra (`OgrenciNumarasi.zip` dosyası) 9 Haziran 2023 23:59'a kadar *ekampus.ankara.edu.tr* adresine yüklemeniz gerekmektedir.**
+
+\colorbox{WildStrawberry}{Daha fazla bilgi için proje klasöründeki README.md dosyasını okuyunuz.}
+
+# Giriş
+Son yıllarda Amerika Birleşik Devletleri okullarda, işyerlerinde ve diğer yerlerde meydana gelen birçok toplu katliam yaşadı. Bu trajik olaylar, toplu katliam konusunda kamuoyunda endişeye yol açtı. Amerika Birleşik Devletleri'ndeki toplu katliam konusunu daha iyi anlamak için, 1982'den 2015'e kadar bu tür olayların bir veri setini inceleyerek bir analiz yapacağız. Data.world web sitesinden Mother Jones'un soruşturmasından aldığımız veri seti, yer, tarih, ölüm ve yaralanma sayısı, kullanılan silah türü, ve her olayın diğer özellikleri içerir. Verileri analiz ederek , kalıpları ve eğilimleri ve ayrıca sorunu çözmeye yardımcı olan politikalar için çıkarımları keşfetmeyi amaçlıyoruz. Analiz ayrıca veri setinin sınırlamalarını ve böylesine karmaşık bir konuyu incelemenin zorluklarını da inceler.
+
+## Çalışmanın Amacı
+Toplu katliamlar, Mağdurlar ve aileleri için yıkıcı sonuçlar doğuran ABD'de ciddi bir kamu güvenliği sorunu haline geldi. Mevcut verileri analiz ederek, bu olayların özellikleri hakkında fikir edinebiliriz.
+
+Bu analizin asıl önemi, bunların oluşmasına katkıda bulunan faktörler hakkında içgörü kazanabilmemiz ve böylece politika yapıcıları toplu katliamlar neden olduğu zararı önleme ve hafifletme yolları hakkında bilgilendirebilmemizdir. Yıllara göre kazalardaki artışın boyutunu ve failin cinsiyeti, mağdur sayısı, önceki akıl hastalıklarının varlığı vb. gibi verilerde yer alan değişkenleri inceleyeceğimiz yer.
+
+Ayrıca, bu analiz farkındalığı artırmaya ve toplu katliamlar hakkında kamuoyunu uyarmaya da yardımcı olabilir. Bu olgunun bir analizini yaparak, politika yapıcıları, medyayı ve halkı bu durumu ele almak için harekete geçmeye teşvik edebiliriz.
+
+## Literatür 
+
+2012 Sandy Hook İlköğretim Okulu'ndaki silahlı saldırı gibi trajik olayların ulusal dikkatleri üzerine çekmesiyle, toplu katliamlar ABD'de acil bir sorun haline geldi. toplu katliamlar çoğunlukla akıl hastalığı veya psikolojik sıkıntı geçmişi olan genç, beyaz erkekler tarafından gerçekleştiriliyor.[@metzl2021mental]
+
+1966'dan 2012'ye kadar dünya çapındaki toplu katliamları belirlemeye yönelik bir çalışma, ABD'de kişi başına düşen toplu katliamlar, incelenen diğer tüm ülkelerden daha fazla olduğunu ortaya çıkardı [@lankford2016public]. Ayrıca, ABD'de son 20 yılda toplu silahlı saldırı olaylarının çoğu ticari veya eğitim amaçlı yerlerde meydana geldi ve erkek suçlular tarafından gerçekleştirildi [@schildkraut2018mass]. Bu, Beyaz üstünlük,toksik erkekliğin bunda oynadığı role ilişkin tartışmayı gündeme getirdi ve ayrıca okullarda ve aile ortamında zorbalık ve bunların bu konuda ne oynadığına dair tartışma yükseldi. Bazıları, Amerika'da silah bulma kolaylığının bu olayların ortaya çıkmasına katkıda bulunduğunu iddia ederken, diğerleri sorunun daha derin ve birden çok toplumsal boyutu olduğuna inanıyor.
+
+Bazı toplu katillerin, iyi bilinen önceki katillerden ilham aldığını belirtmekte fayda var. Sadece önceki katillerle ilgili değiller, onlardan ilham alıyorlar ve onları geçmek istiyorlar. Bu, medyanın bu olayları haber yapma biçimine yönelik eleştirilere yol açtı. Medyanın bu olayları kapsaması, bir "bulaşma etkisine" katkıda bulunabilir; bu durumda, halihazırda şiddet eylemleri işleme riski taşıyan bireyler, önceki faillere gösterilen ilgiyle daha fazla motive olabilir [@murray2017mass; @krouse2015mass].
+
+Araştırmalar, gelir eşitsizliğinin arttığı ilçelerde toplu katliamların olma ihtimalinin daha yüksek olduğunu göstermiştir. Bu, gelir eşitsizliğinin sonunda şiddete dönüşen bir öfke ve sertlik ortamını körüklediği fikrinden kaynaklanıyor olabilir.[@kwon2019income]
+
+Genel olarak toplu katliamlar üzerine yapılan araştırmalar, bu trajik olaylara ve bunları önlemenin potansiyel yollarına ilişkin değerli içgörüler sağlamıştır. Bununla birlikte, toplu infazların en iyi nasıl tanımlanacağı ve ölçüleceği, bunların meydana gelmesine hangi faktörlerin katkıda bulunduğu ve bu tür olayların meydana gelmesini önlemek veya azaltmak için dikkate alınması gereken önleyici tedbirlerin neler olduğu konusunda hala çok fazla tartışma var.
+
+# Veri 
+Bu bölümde çalışmanızda kullandığınız veri setinin kaynağını, ham veri üzerinde herhangi bir işlem yaptıysanız bu işlemleri ve veri seti ile ilgili özet istatistikleri tartışınız. Bu bölümde tüm değişkenlere ait özet istatistikleri (ortalama, standart sapma, minimum, maksimum, vb. değerleri) içeren bir tablo (Tablo \ref{tab:ozet}) olması zorunludur. Tablolarınıza gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız. [@perkins:1991]
+
+Analize ait R kodları bu bölümde başlamalıdır. Bu bölümde veri setini R'a aktaran ve özet istatistikleri üreten kodlar yer almalıdır.
+
+```{r}
+library(tidyverse)
+library(here)
+survey <- read_csv(here("../data/survey.csv"))
+```
+
+Rmd dosyasında kod bloklarının bazılarında kod seçeneklerinin düzenlendiğine dikkat edin. 
+
+```{r, echo=FALSE}
+library(xtable) 
+# devtools::install_github("emraher/summarytools")
+library(summarytools)
+st_options(lang = "tr")
+```
+
+`echo=FALSE` seçeneği ile kodların türetilen pdf dosyasında görünmesini engelleyin ve sonuçlarınızı tablo halinde rapor edin.
+
+```{r results='asis', echo=FALSE}
+survey %>%
+  select("sex", "credits", "handedness", "height", "handspan") %>% 
+  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
+  xtable(caption = "Özet İstatistikler",
+         label = "tab:ozet",
+         align = c("l", "c", "c", "c", "c", "c")) %>% 
+  print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
+```
+
+
+# Yöntem ve Veri Analizi
+Bu bölümde veri setindeki bilgileri kullanarak çalışmanın amacına ulaşmak için kullanılacak yöntemleri açıklayın. Derste işlenen/işlenecek olan analiz yöntemlerinden (Hipotez testleri ve korelasyon analizi gibi) çalışmanın amacına ve veri setine uygun olanlar bu bölümde kullanılmalıdır. [@newbold:2003; @ozsoy:2010; @ozsoy:2014]
+
+Örneğin, regresyon analizi gerçekleştiriyorsanız tahmin ettiğiniz denklemi bu bölümde tartışınız. Denklemlerinizi ve matematiksel ifadeleri $LaTeX$ kullanarak yazınız.
+
+$$
+Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
+$$
+
+Bu bölümde analize ilişkin farklı tablolar ve grafiklere yer verilmelidir. Çalışmanıza uygun biçimde histogram, nokta grafiği (Şekil \@ref(fig:plot) gibi), kutu grafiği, vb. grafikleri bu bölüme ekleyiniz. Şekillerinize de gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız.
+
+
+```{r plot, fig.align='center', fig.cap='Muhteşem Bir Grafik'}
+survey %>% 
+  ggplot(aes(x = handedness, y = handspan)) +
+  geom_point() +
+  geom_smooth() +
+  scale_x_continuous("Handedness") + 
+  scale_y_continuous("Handspan")
+```
+
+
+# Sonuç
+Bu bölümde çalışmanızın sonuçlarını özetleyiniz. Sonuçlarınızın başlangıçta belirlediğiniz araştırma sorusuna ne derece cevap verdiğini ve ileride bu çalışmanın nasıl geliştirilebileceğini tartışınız.
+
+**Kaynakça bölümü Rmarkdown tarafından otomatik olarak oluşturulmaktadır. Taslak dosyada Kaynakça kısmında herhangi bir değişikliğe gerek yoktur.** 
+
+**_Taslakta bu cümleden sonra yer alan hiçbir şey silinmemelidir._**
+
+\newpage
+# Kaynakça {#references}
+<div id="refs"></div>
+

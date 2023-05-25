@@ -1,0 +1,72 @@
+CASE,GENDER,SHOOTINGTYPE,RACE,LOCATION,STATE,YEAR,FATALITIES,WOUNDED,TOTALVICTIMS,LOCATIONTYPE,PRIORSIGNSOFMENTALILLNESS,WEAPONSOBTAINEDLEGALLY,WHEREWEAPONOBTAINED,TYPEOFWEAPONS,NUMWEAPONS
+Chattanooga military recruitment center,Male,Mass,Middle Eastern,"Chattanooga, Tennessee",Tennessee,2015,5,2,7,Military,Yes,Yes,"On the internet, via Armslist.com",2 assault rifles; semiautomatic handgun,3
+Charleston Church Shooting,Male,Mass,White,"Charleston, South Carolina",South Carolina,2015,9,1,10,Religious,No,Yes,"Shooter's Choice gun store in West Columbia, South Carolina",Handgun,1
+Marysville-Pilchuck High School shooting,Male,Mass,Native American,"Marysville, Washington",Washington,2014,5,1,6,School,No,No,Gun was his father's.,Handgun,1
+Alturas tribal shooting,Female,Mass,Native American,"Alturas, California",California,2014,4,2,6,Other,No,,Unknown,Two handguns and a butcher knife,2
+Washington Navy Yard shooting,Male,Mass,Black,"Washington, D.C.",D.C.,2013,12,8,20,Military,Yes,Yes,Sharpshooters Small Arms Range,"Sawed-off shotgun, 2 boxes of shells; also a .45-caliber handgun taken from a security guard he shot at the scene.",1
+Hialeah apartment shooting,Male,Mass,Latino,"Hialeah, Florida",Florida,2013,7,0,7,Other,Yes,Yes,Florida Gun Center,9mm semi-automatic handgun,1
+Santa Monica rampage,Male,Spree,White,"Santa Monica, California",California,2013,6,3,9,Other,Yes,Yes,Assembled a rifle out of component parts.,"Assault rifle, high capacity magazines, antique handgun",2
+Pinewood Village Apartment shooting,Male,Mass,Black,"Federal Way, Washington",Washington,2013,5,0,5,Other,No,Yes,Unknown,"Semiautomatic handgun, shotgun",2
+Mohawk Valley shootings,Male,Spree,White,"Herkimer County, New York",New York,2013,5,2,7,Other,No,Yes,"Frank's Guns in Marcy, NY",Shotgun,1
+Newtown school shooting,Male,Mass,White,"Newtown, Connecticut",Connecticut,2012,28,2,30,School,Yes,No,Stolen from mother,"Two semiautomatic handguns, one rifle (assault), one shotgun (assault)",4
+Accent Signage Systems shooting,Male,Mass,White,"Minneapolis, Minnesota",Minnesota,2012,7,1,8,Workplace,Yes,Yes,Unknown,One semiautomatic handgun,1
+Sikh temple shooting,Male,Mass,White,"Oak Creek, Wisconsin",Wisconsin,2012,7,3,10,Religious,Yes,Yes,Unknown,One semiautomatic handgun,1
+Aurora theater shooting,Male,Mass,White,"Aurora, Colorado",Colorado,2012,12,58,70,Other,Yes,Yes,"Gander Mountain stores in Thornton and Aurora, Colo.; Bass Pro Shop in Denver, Colo.; BulkAmmo.com","Two semiautomatic handguns, one rifle (assault), one shotgun",4
+Seattle cafe shooting,Male,Spree,White,"Seattle, Washington",Washington,2012,6,1,7,Other,Yes,Yes,"Bull's Eye Shooter Supply in Tacoma, Wash.",Two semiautomatic handguns,2
+Oikos University killings,Male,Mass,Asian,"Oakland, California",California,2012,7,3,10,School,Yes,Yes,"Bullseye in Castro Valley, Calif.",One semiautomatic handgun,1
+Su Jung Health Sauna shooting,Male,Mass,Asian,"Norcross, Georgia",Georgia,2012,5,0,5,Other,Yes,Yes,Unknown,One semiautomatic handgun,1
+Seal Beach shooting,Male,Mass,White,"Seal Beach, California",California,2011,8,1,9,Other,Yes,Yes,Unknown,"Two semiautomatic handguns, one revolver",3
+IHOP shooting,Male,Mass,Latino,"Carson City, Nevada",Nevada,2011,5,7,12,Other,Yes,Yes,Purchased from an individual,"Two rifles (both assault), one revolver",3
+Tucson shooting,Male,Mass,White,"Tucson, Arizona",Arizona,2011,6,13,19,Other,Yes,Yes,"Sportsmen's Warehouse in Tucson, Ariz.",One semiautomatic handgun,1
+Hartford Beer Distributor shooting,Male,Mass,Black,"Manchester, Connecticut",Connecticut,2010,9,2,11,Workplace,No,Yes,"Gun dealer in East Windsor, Conn.",Two semiautomatic handguns,2
+Coffee shop police killings,Male,Mass,Black,"Parkland, Washington",Washington,2009,4,1,5,Other,Yes,No,Stolen from an individual in Seattle.,One semiautomatic handgun,1
+Fort Hood massacre,Male,Mass,Other,"Fort Hood, Texas",Texas,2009,13,30,43,Military,Yes,Yes,"Guns Galore in Kileen, Texas",One semiautomatic handgun,1
+Binghamton shootings,Male,Mass,Asian,"Binghamton, New York",New York,2009,14,4,18,Other,Yes,Yes,"Gander Mountain in Johnson City, N.Y.",Two semiautomatic handguns,2
+Carthage nursing home shooting,Male,Mass,White,"Carthage, North Carolina",North Carolina,2009,8,3,11,Other,Yes,Yes,Local sporting goods stores and individuals,"One revolver, one shotgun",2
+Atlantis Plastics shooting,Male,Mass,White,"Henderson, Kentucky",Kentucky,2008,6,1,7,Workplace,No,Yes,Unknown,One semiautomatic handgun,1
+Northern Illinois University shooting,Male,Mass,White,"DeKalb, Illinois",Illinois,2008,6,21,27,School,Yes,Yes,"Online and gun retailers in Champaign, Ill. ","Three semiautomatic handguns, one shotgun",4
+Kirkwood City Council shooting,Male,Mass,Black,"Kirkwood, Missouri",Missouri,2008,6,2,8,Other,No,No,Taken in burglary and from fallen police officer,"One semiautomatic handgun, one revolver",2
+Westroads Mall shooting,Male,Mass,White,"Omaha, Nebraska",Nebraska,2007,9,4,13,Other,Yes,No,Stolen from grandfather,One rifle (assault),1
+Crandon shooting,Male,Mass,White,"Crandon, Wisconsin",Wisconsin,2007,6,1,7,Other,No,Yes,Issued by Forest County Sheriff's Department,One rifle (assault),1
+Virginia Tech massacre,Male,Mass,Asian,"Blacksburg, Virginia",Virginia,2007,33,23,56,School,Yes,Yes,"Purchased variously online and from Roanoke Firearms in Roanoke, Va.",Two semiautomatic handguns,2
+Trolley Square shooting,Male,Mass,White,"Salt Lake City, Utah",Utah,2007,6,4,10,Other,Yes,No,"Purchased variously from Sportsman's Fast Cash in West Valley City, Utah and individuals ","One revolver, one shotgun",2
+Amish school shooting,Male,Mass,White,"Lancaster County, Pennsylvania",Pennsylvania,2006,6,5,11,School,No,Yes,"Local stores in Nickel Mines, Penn. ","One semiautomatic handgun, one rifle, one shotgun",3
+Capitol Hill massacre,Male,Mass,White,"Seattle, Washington",Washington,2006,7,2,9,Other,No,Yes,"Various sporting goods stores in Kalispell, Mont.","Two semiautomatic handguns, one rifle (assault), one shotgun",4
+Goleta postal shootings,Female,Spree,White,"Goleta, California",California,2006,8,0,8,Workplace,Yes,Yes,"Pawn shops in Grants and Gallup, N.M.",One semiautomatic handgun,1
+Red Lake massacre,Male,Spree,Native American,"Red Lake, Minnesota",Minnesota,2005,10,5,15,School,Yes,No,Glock and Remington stolen from grandfather,"Two semiautomatic handguns, one shotgun",3
+Living Church of God shooting,Male,Mass,White,"Brookfield, Wisconsin",Wisconsin,2005,7,4,11,Religious,Yes,Yes,"Gun dealer in Waukesha, Wis.",One semiautomatic handgun,1
+Damageplan show shooting,Male,Mass,White,"Columbus, Ohio",Ohio,2004,5,7,12,Other,Yes,Yes,Received as a gift from mother,One semiautomatic handgun,1
+Lockheed Martin shooting,Male,Mass,White,"Meridian, Mississippi",Mississippi,2003,7,8,15,Workplace,Yes,Yes,Purchased from an individual,"One semiautomatic handgun, two rifles, one derringer, one shotgun",5
+Navistar shooting,Male,Mass,Black,"Melrose Park, Illinois",Illinois,2001,5,4,9,Workplace,No,Yes,"Some purchased from Pepper Sports in Glen Ellyn, Ill. ","Two rifles, one revolver, one shotgun",4
+Wakefield massacre,Male,Mass,White,"Wakefield, Massachusetts",Massachusetts,2000,7,0,7,Workplace,Yes,Yes,Unknown,"One semiautomatic handgun, one rifle (assault), one shotgun",3
+Hotel shooting,Male,Mass,Latino,"Tampa, Florida",Florida,1999,5,3,8,Workplace,Yes,Yes,"One purchased from Big E's in Tampa, Fla.","One semiautomatic handgun, one revolver",2
+Xerox killings,Male,Mass,Asian,"Honolulu, Hawaii",Hawaii,1999,7,0,7,Workplace,Yes,Yes,"Hunting Supplies of Hawaii (The Armory) in Honolulu, Hawaii",One semiautomatic handgun,1
+Wedgwood Baptist Church shooting,Male,Mass,White,"Fort Worth, Texas",Texas,1999,8,7,15,Religious,Yes,Yes,"Trader's Village flea market in Grand Prairie, Texas",Two semiautomatic handguns,2
+Atlanta day trading spree killings,Male,Spree,White,"Atlanta, Georgia",Georgia,1999,9,13,22,Workplace,Yes,Yes,"Glock purchased from gun store in Warner Robins, Ga. ","Three semiautomatic handguns, one revolver",4
+Columbine High School massacre,Male,Mass,White,"Littleton, Colorado",Colorado,1999,15,24,39,School,Yes,No,"Purchased variously at Tanner Gun Show in Denver, Colo. and from an individual","One semiautomatic handgun (assault), one rifle (assault), two shotguns",4
+Thurston High School shooting,Male,Spree,White,"Springfield, Oregon",Oregon,1998,4,25,29,School,Yes,No,"Purchased variously from friend and father, and stolen from father","Two semiautomatic handguns, one rifle",3
+Westside Middle School killings,Male,Mass,White,"Jonesboro, Arkansas",Arkansas,1998,5,10,15,School,No,No,Stolen from grandfather and father,"Two semiautomatic handguns, two rifles, three revolvers, two derringers",9
+Connecticut Lottery shooting,Male,Mass,White,"Newington, Connecticut",Connecticut,1998,5,1,6,Workplace,Yes,Yes,Unknown,One semiautomatic handgun,1
+Caltrans maintenance yard shooting,Male,Mass,Latino,"Orange, California",California,1997,5,2,7,Workplace,No,Yes,"B&B Gun Sales in Orange County, Calif.",One rifle (assault),1
+R.E. Phelon Company shooting,Male,Mass,Black,"Aiken, South Carolina",South Carolina,1997,4,3,7,Workplace,No,No,Unknown,One semiautomatic handgun,1
+Fort Lauderdale revenge shooting,Male,Mass,Black,"Fort Lauderdale, Florida",Florida,1996,6,1,7,Workplace,Yes,Yes,Unknown,"One semiautomatic handgun, one revolver",2
+Walter Rossler Company massacre,Male,Mass,White,"Corpus Christi, Texas",Texas,1995,6,0,6,Workplace,No,Yes,Unknown,"One semiautomatic handgun, one revolver",2
+Air Force base shooting,Male,Mass,White,"Fairchild Air Force Base, Washington",Washington,1994,5,23,28,Military,Yes,Yes,"Gun dealer in Spokane, Wash.",One rifle (assault),1
+Chuck E. Cheese's killings,Male,Mass,Black,"Aurora, Colorado",Colorado,1993,4,1,5,Workplace,No,,Unknown,One semiautomatic handgun,1
+Long Island Rail Road massacre,Male,Mass,Black,"Garden City, New York",New York,1993,6,19,25,Other,Yes,Yes,"Turner's Outdoorsman in Signal Hill, Calif. ",One semiautomatic handgun,1
+Luigi's shooting,Male,Mass,White,"Fayetteville, North Carolina",North Carolina,1993,4,8,12,Other,No,Yes,Unknown,"One rifle, two shotguns",3
+101 California Street shootings,Male,Mass,White,"San Francisco, California",California,1993,9,6,15,Other,No,No,"Super Pawn and Pacific Tactical Weapons, both in Las Vegas, Nev.",Three semiautomatic handguns (two assault),3
+Watkins Glen killings,Male,Mass,White,"Watkins Glen, New York",New York,1992,5,0,5,Other,Yes,Yes,"Mumford Sports in Litchfield, Ohio",One semiautomatic handgun,1
+Lindhurst High School shooting,Male,Mass,White,"Olivehurst, California",California,1992,4,10,14,School,No,Yes,Local gun retailer,"One rifle, one shotgun",2
+Royal Oak postal shootings,Male,Mass,White,"Royal Oak, Michigan",Michigan,1991,5,5,10,Workplace,Yes,Yes,Local gun store,One rifle,1
+University of Iowa shooting,Male,Mass,Asian,"Iowa City, Iowa",Iowa,1991,6,1,7,School,Yes,Yes,"Fin & Feather in Iowa City, Iowa",One revolver,1
+Luby's massacre,Male,Mass,White,"Killeen, Texas",Texas,1991,24,20,44,Other,No,Yes,"Mike's Gun Shop in Henderson, Nev.",Two semiautomatic handguns,2
+GMAC massacre,Male,Mass,Black,"Jacksonville, Florida",Florida,1990,10,4,14,Other,No,Yes,Unknown,"One rifle, one revolver",2
+Standard Gravure shooting,Male,Mass,White,"Louisville, Kentucky",Kentucky,1989,9,12,21,Workplace,Yes,Yes,"AK-47 purchased from Tilford's Gun Sales in Louisville, Ky. ","Three semiautomatic handguns (two assault), one rifle (assault), one revolver",5
+Stockton schoolyard shooting,Male,Mass,White,"Stockton, California",California,1989,6,29,35,School,Yes,Yes,"Sandy Trading Post in Sandy, Ore.; Hunter Loan and Jewelry Co. in Stockton, Calif.","One semiautomatic handgun, one rifle (assault)",2
+ESL shooting,Male,Mass,White,"Sunnyvale, California",California,1988,7,4,11,Workplace,Yes,Yes,Various sporting goods and gun stores in Northern California,"Two semiautomatic handguns, one rifle, two revolvers, two shotguns",7
+Shopping centers spree killings,Male,Spree,White,"Palm Bay, Florida",Florida,1987,6,14,20,Other,Yes,Yes,"Gun store in Norwood, Ohio; The Oaks Trading Post in Melbourne, Fla.","One rifle, one revolver, one shotgun",3
+United States Postal Service shooting,Male,Mass,White,"Edmond, Oklahoma",Oklahoma,1986,15,6,21,Workplace,Yes,Yes,"Issued by Oklahoma National Guard, where Sherrill served, for target competition  ",Three semiautomatic handguns,3
+San Ysidro McDonald's massacre,Male,Mass,White,"San Ysidro, California",California,1984,22,19,41,Other,Yes,Yes,Unknown,"One semiautomatic handgun, one rifle (assault), one shotgun",3
+Dallas nightclub shooting,Male,Mass,White,"Dallas, Texas",Texas,1984,6,1,7,Other,Yes,No,"Hines Boulevard Pawn Shop in Dallas, Texas",One semiautomatic handgun,1
+Welding shop shooting,Male,Mass,White,"Miami, Florida",Florida,1982,8,3,11,Other,Yes,Yes,"Garcia Gun Center in Hialeah, Fla.",One shotgun,1
