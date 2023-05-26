@@ -34,17 +34,8 @@ knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FAL
 <!-- ======================================================================= -->
 <!-- ============================== NOTLAR ================================= -->
 <!-- ======================================================================= -->
-[^1]: Öğrenci Numarası, [Github Repo](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ)
+[^1]: 19080007, [Github Repo](https://github.com/abed-alsalam-anka/Final)
 
-# Final Hakkında Önemli Bilgiler
-
-\colorbox{BurntOrange}{GITHUB REPO BAĞLANTINIZI BU DOSYANIN 37. SATIRINA YAZINIZ!}
-
-**Proje gönderimi, Github repo linki ile birlikte ekampus sistemine bir zip dosyası yüklenerek yapılacaktır. Sisteme zip dosyası yüklemezseniz ve Github repo linki vermezseniz ara sınav ve final sınavlarına girmemiş sayılırsınız.**
-
-**Proje klasörünüzü sıkıştırdıktan sonra (`OgrenciNumarasi.zip` dosyası) 9 Haziran 2023 23:59'a kadar *ekampus.ankara.edu.tr* adresine yüklemeniz gerekmektedir.**
-
-\colorbox{WildStrawberry}{Daha fazla bilgi için proje klasöründeki README.md dosyasını okuyunuz.}
 
 # Giriş
 Son yıllarda Amerika Birleşik Devletleri okullarda, işyerlerinde ve diğer yerlerde meydana gelen birçok toplu katliam yaşadı. Bu trajik olaylar, toplu katliam konusunda kamuoyunda endişeye yol açtı. Amerika Birleşik Devletleri'ndeki toplu katliam konusunu daha iyi anlamak için, 1982'den 2015'e kadar bu tür olayların bir veri setini inceleyerek bir analiz yapacağız. Data.world web sitesinden Mother Jones'un soruşturmasından aldığımız veri seti, yer, tarih, ölüm ve yaralanma sayısı, kullanılan silah türü, ve her olayın diğer özellikleri içerir. Verileri analiz ederek , kalıpları ve eğilimleri ve ayrıca sorunu çözmeye yardımcı olan politikalar için çıkarımları keşfetmeyi amaçlıyoruz. Analiz ayrıca veri setinin sınırlamalarını ve böylesine karmaşık bir konuyu incelemenin zorluklarını da inceler.
