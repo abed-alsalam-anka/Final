@@ -25,7 +25,7 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
-  Bu bölümde çalışmanızın özetini yazınız.
+  Bu çalışma, Amerika Birleşik Devletleri'ndeki kitlesel silahlı saldırıların kalıpları, eğilimleri ve sonuçları hakkında bir analiz sunmaktadır. Çalışma, bu trajedilere katkıda bulunan faktörler hakkında bilgi edinmek ve politika yapıcıları bunların etkilerini önleme ve azaltma yolları hakkında bilgilendirmek için 1982'den 2015'e kadar olan bu tür olayların bir veri setini inceliyor. Analiz, toplu kurşuna dizilme olaylarının ABD'de ciddi bir kamu güvenliği sorunu olduğunu, olayların çoğunun erkekler tarafından işlendiğini ve ateşli silahların en sık kullanılan silah olduğunu ortaya koyuyor. Çalışma toplu infazların özelliklerine ışık tutarken, sosyoekonomik koşullar gibi diğer faktörlerin etkisini araştırmak için daha fazla araştırmaya ihtiyaç var. Bu çalışmanın bulguları, farkındalığı artırmak ve politika yapıcılar, medya ve kamuoyu tarafından bu konuyu ele almak için harekete geçmeyi teşvik etmek için kullanılabilir.
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
@@ -60,7 +60,7 @@ Araştırmalar, gelir eşitsizliğinin arttığı ilçelerde toplu katliamların
 Genel olarak toplu katliamlar üzerine yapılan araştırmalar, bu trajik olaylara ve bunları önlemenin potansiyel yollarına ilişkin değerli içgörüler sağlamıştır. Bununla birlikte, toplu infazların en iyi nasıl tanımlanacağı ve ölçüleceği, bunların meydana gelmesine hangi faktörlerin katkıda bulunduğu ve bu tür olayların meydana gelmesini önlemek veya azaltmak için dikkate alınması gereken önleyici tedbirlerin neler olduğu konusunda hala çok fazla tartışma var.
 
 # Veri 
-Verilerin kaynağı, Amerika Birleşik Devletleri'ndeki toplu silahlı saldırılarla ilgili derinlemesine bir soruşturma yürüten tanınmış bir Amerikan haber kuruluşu olan Mother Jones'tur. Soruşturmanın yazarları Mark Follman, Gavin Aronsen ve Deanna Pan'dır.
+Verilerin kaynağı, Amerika Birleşik Devletleri'ndeki toplu katliamla ilgili derinlemesine bir soruşturma yürüten tanınmış bir Amerikan haber kuruluşu olan Mother Jones'tur. Soruşturmanın yazarları Mark Follman, Gavin Aronsen ve Deanna Pan'dır.
 
 Yazarlar, onu nasıl oluşturduklarına ilişkin bilgiler de dahil olmak üzere, veri kümesiyle ilgili bağlam sağlamak için çaba sarf etmişlerdir. Bu Analizde veri setimizi basitleştirmek adına veri setimizi değiştirdik, şu sütunları kaldırdık: sources, longitude, latitude, summary, where_obtained.
 
@@ -93,47 +93,114 @@ USMassShootings %>%
   print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
 ```
 
+
+
 Ölümlerin ortalaması yaklaşık 8.04'tür. Ortalama değeri temsil eder. Ortalamanın büyük olması, olayların çok sayıda ölüme yol açtığını gösterir.
 
 Toplam kurban sayısına bakarsak, minimum değer olan 5 ve maksimum değer olan 70, veri kümesindeki değer aralığı hakkında bilgi sağlar. bu da olaylardaki mağdur sayısının çok fazla olduğunu ve ciddi bir sorun olduğunu gösteriyor.
 
 # Yöntem ve Veri Analizi
-korelasyon analizi, veri setini analiz etmek ve veri setinden faydalı sonuçlara ulaşmak için kullanacağımız bir yöntemdir.
+Korelasyon analizi, veri setini analiz etmek ve veri setinden faydalı sonuçlara ulaşmak için kullanacağımız bir yöntemdir.
 
 Başlangıç olarak, toplu katliam olaylarının daha sık görülmesiyle ilişkili cinsiyeti inceleyelim.
+
+
 ```{r, echo=FALSE}
 
 ggplot(data = USMassShootings, aes(x = GENDER)) +
-  geom_bar(fill = "blue") +
+  geom_bar(fill = "red") +
   labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
 
 ```
+
+
 Olayların büyük çoğunluğunun erkekler tarafından işlendiği anlaşılmaktadır.
 
-```{r, echo=FALSE}
 
-ggplot(data = USMassShootings, aes(x = GENDER)) +
-  geom_bar(fill = "blue") +
-  labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
 
-```
+Çoğu silahın yasal olarak elde edilip edilmediğini kontrol edelim
+
 
 
 ```{r, echo=FALSE}
 
-ggplot(data = USMassShootings, aes(x = GENDER)) +
-  geom_bar(fill = "blue") +
-  labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
+weapon_counts <- USMassShootings %>% count(WEAPONSOBTAINEDLEGALLY)
+
+pie_chart <- ggplot(weapon_counts, aes(x = "", y = n, fill = WEAPONSOBTAINEDLEGALLY)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  theme_void() +
+  labs(fill = "Weapons Obtained Legally?")
+
+print(pie_chart)
+```
+
+
+
+Evet çoğu yasal olarak elde edildi
+
+
+
+Her ırk grubu için tüm sayıları özetleyelim
+
+
+
+```{r, echo=FALSE}
+
+
+race_counts <- USMassShootings %>% count(RACE)
+
+bar_plot <- ggplot(race_counts, aes(x = RACE, y = n)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(x = "Race", y = "Count") +
+  ggtitle("Distribution of Races") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(bar_plot)
 
 ```
+
+
+Beyaz ırk en yüksek değeri alır
+
+
+
+Şimdi, silah sayısı ile toplam kurban sayısı arasında pozitif bir ilişki olup olmadığını analiz edelim.
+
+
+
+```{r, echo=FALSE}
+data <- USMassShootings[, c("NUMWEAPONS", "TOTALVICTIMS")]
+
+scatter_plot <- ggplot(data, aes(x = NUMWEAPONS, y =  TOTALVICTIMS)) +
+  geom_point() +
+  labs(x = "Number of Weapons", y = "Total Victims") +
+  ggtitle("Relationship between Number of Weapons and Total Victims") +
+  theme_minimal()
+
+print(scatter_plot)
+
+correlation <- cor(USMassShootings$NUMWEAPONS, USMassShootings$TOTALVICTIMS)
+if (correlation > 0) {
+  print("There is a positive correlation between the number of weapons and total victims.")
+} else if (correlation < 0) {
+  print("There is a negative correlation between the number of weapons and total victims.")
+} else {
+  print("There is no correlation between the number of weapons and total victims.")
+}
+
+```
+
+
+Silah sayısı ile toplam kurban sayısı arasında pozitif bir ilişki vardır.
 
 
 # Sonuç
-Bu bölümde çalışmanızın sonuçlarını özetleyiniz. Sonuçlarınızın başlangıçta belirlediğiniz araştırma sorusuna ne derece cevap verdiğini ve ileride bu çalışmanın nasıl geliştirilebileceğini tartışınız.
+Analiz sonucunda toplu katliamların Amerika Birleşik Devletleri'nde ciddi bir kamu güvenliği sorunu olduğu ve daha fazla çalışmanın önemli olduğu sonucuna vardık. Ayrıca kazaların büyük çoğunluğunun erkekler tarafından yapıldığını ve silah kontrolü politikalarının bu sorunu çözmeye yardımcı olabileceğini not ediyoruz. Aynı şekilde, kazaların çoğu beyaz ırktandır, ancak bunun nedeni Amerika'daki beyaz nüfusun yüksek yüzdesinden kaynaklanıyor olabilir.
 
-**Kaynakça bölümü Rmarkdown tarafından otomatik olarak oluşturulmaktadır. Taslak dosyada Kaynakça kısmında herhangi bir değişikliğe gerek yoktur.** 
-
-**_Taslakta bu cümleden sonra yer alan hiçbir şey silinmemelidir._**
+Bu çalışma, Amerika Birleşik Devletleri'ndeki toplu katliam olgusunu anlamaya yönelik önemli bir adımdır. Ve araştırma sorusuna cevaplar aldık: Amerika Birleşik Devletleri'ndeki toplu katliamın kalıpları, eğilimleri ve etkileri hakkında ne öğrenebiliriz?
+Ancak, bu çalışmanın gelecekte daha fazla geliştirilmesi gerekiyor. Örneğin, veri setinin daha kapsamlı bir şekilde incelenmesi ve çeşitli faktörlerin (örn. sosyo-ekonomik faktörler) etkisinin analizine ihtiyaç vardır. Ek olarak, bu çalışmanın sonuçları politika yapıcılara ve diğer ilgili taraflara sunulmalıdır.
 
 \newpage
 # Kaynakça {#references}
