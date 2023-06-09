@@ -60,17 +60,20 @@ Araştırmalar, gelir eşitsizliğinin arttığı ilçelerde toplu katliamların
 Genel olarak toplu katliamlar üzerine yapılan araştırmalar, bu trajik olaylara ve bunları önlemenin potansiyel yollarına ilişkin değerli içgörüler sağlamıştır. Bununla birlikte, toplu infazların en iyi nasıl tanımlanacağı ve ölçüleceği, bunların meydana gelmesine hangi faktörlerin katkıda bulunduğu ve bu tür olayların meydana gelmesini önlemek veya azaltmak için dikkate alınması gereken önleyici tedbirlerin neler olduğu konusunda hala çok fazla tartışma var.
 
 # Veri 
-Bu bölümde çalışmanızda kullandığınız veri setinin kaynağını, ham veri üzerinde herhangi bir işlem yaptıysanız bu işlemleri ve veri seti ile ilgili özet istatistikleri tartışınız. Bu bölümde tüm değişkenlere ait özet istatistikleri (ortalama, standart sapma, minimum, maksimum, vb. değerleri) içeren bir tablo (Tablo \ref{tab:ozet}) olması zorunludur. Tablolarınıza gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız. [@perkins:1991]
+Verilerin kaynağı, Amerika Birleşik Devletleri'ndeki toplu silahlı saldırılarla ilgili derinlemesine bir soruşturma yürüten tanınmış bir Amerikan haber kuruluşu olan Mother Jones'tur. Soruşturmanın yazarları Mark Follman, Gavin Aronsen ve Deanna Pan'dır.
 
-Analize ait R kodları bu bölümde başlamalıdır. Bu bölümde veri setini R'a aktaran ve özet istatistikleri üreten kodlar yer almalıdır.
+Yazarlar, onu nasıl oluşturduklarına ilişkin bilgiler de dahil olmak üzere, veri kümesiyle ilgili bağlam sağlamak için çaba sarf etmişlerdir. Bu Analizde veri setimizi basitleştirmek adına veri setimizi değiştirdik, şu sütunları kaldırdık: sources, longitude, latitude, summary, where_obtained.
 
-```{r}
+Yazarların, toplu katliamları tanımlama ve takip etme konusunda, bu tür olayları tam olarak tanımlama ve kategorize etmedeki zorluklar gibi, belirli sınırlamaları ve zorlukları kabul ettiklerini not etmek önemlidir.
+
+verilerimizin özet tablosuna bir göz atalım
+
+```{r, echo=FALSE}
 library(tidyverse)
 library(here)
-survey <- read_csv(here("../data/survey.csv"))
+USMassShootings <- read_csv(here("../data/USMassShootings.csv"))
 ```
 
-Rmd dosyasında kod bloklarının bazılarında kod seçeneklerinin düzenlendiğine dikkat edin. 
 
 ```{r, echo=FALSE}
 library(xtable) 
@@ -79,11 +82,10 @@ library(summarytools)
 st_options(lang = "tr")
 ```
 
-`echo=FALSE` seçeneği ile kodların türetilen pdf dosyasında görünmesini engelleyin ve sonuçlarınızı tablo halinde rapor edin.
 
 ```{r results='asis', echo=FALSE}
-survey %>%
-  select("sex", "credits", "handedness", "height", "handspan") %>% 
+USMassShootings %>%
+  select("FATALITIES", "WOUNDED", "TOTALVICTIMS", "NUMWEAPONS") %>% 
   descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
   xtable(caption = "Özet İstatistikler",
          label = "tab:ozet",
@@ -91,26 +93,38 @@ survey %>%
   print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
 ```
 
+Ölümlerin ortalaması yaklaşık 8.04'tür. Ortalama değeri temsil eder. Ortalamanın büyük olması, olayların çok sayıda ölüme yol açtığını gösterir.
+
+Toplam kurban sayısına bakarsak, minimum değer olan 5 ve maksimum değer olan 70, veri kümesindeki değer aralığı hakkında bilgi sağlar. bu da olaylardaki mağdur sayısının çok fazla olduğunu ve ciddi bir sorun olduğunu gösteriyor.
 
 # Yöntem ve Veri Analizi
-Bu bölümde veri setindeki bilgileri kullanarak çalışmanın amacına ulaşmak için kullanılacak yöntemleri açıklayın. Derste işlenen/işlenecek olan analiz yöntemlerinden (Hipotez testleri ve korelasyon analizi gibi) çalışmanın amacına ve veri setine uygun olanlar bu bölümde kullanılmalıdır. [@newbold:2003; @ozsoy:2010; @ozsoy:2014]
+korelasyon analizi, veri setini analiz etmek ve veri setinden faydalı sonuçlara ulaşmak için kullanacağımız bir yöntemdir.
 
-Örneğin, regresyon analizi gerçekleştiriyorsanız tahmin ettiğiniz denklemi bu bölümde tartışınız. Denklemlerinizi ve matematiksel ifadeleri $LaTeX$ kullanarak yazınız.
+Başlangıç olarak, toplu katliam olaylarının daha sık görülmesiyle ilişkili cinsiyeti inceleyelim.
+```{r, echo=FALSE}
 
-$$
-Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
-$$
+ggplot(data = USMassShootings, aes(x = GENDER)) +
+  geom_bar(fill = "blue") +
+  labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
 
-Bu bölümde analize ilişkin farklı tablolar ve grafiklere yer verilmelidir. Çalışmanıza uygun biçimde histogram, nokta grafiği (Şekil \@ref(fig:plot) gibi), kutu grafiği, vb. grafikleri bu bölüme ekleyiniz. Şekillerinize de gerekli göndermeleri bir önceki cümlede gösterildiği gibi yapınız.
+```
+Olayların büyük çoğunluğunun erkekler tarafından işlendiği anlaşılmaktadır.
+
+```{r, echo=FALSE}
+
+ggplot(data = USMassShootings, aes(x = GENDER)) +
+  geom_bar(fill = "blue") +
+  labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
+
+```
 
 
-```{r plot, fig.align='center', fig.cap='Muhteşem Bir Grafik'}
-survey %>% 
-  ggplot(aes(x = handedness, y = handspan)) +
-  geom_point() +
-  geom_smooth() +
-  scale_x_continuous("Handedness") + 
-  scale_y_continuous("Handspan")
+```{r, echo=FALSE}
+
+ggplot(data = USMassShootings, aes(x = GENDER)) +
+  geom_bar(fill = "blue") +
+  labs(x = "Gender", y = "Count", title = "Occurrence of Mass Shootings by Gender")
+
 ```
 
 
